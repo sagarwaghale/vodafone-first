@@ -17,15 +17,15 @@ app.controller('myCtrl',['$scope','$http' , function ($scope,$http) {
     }
 
   */
-    var totalAmount = 0;
-    var newbill = 0;
+    $scope.totalAmount = 0;
+     $scope.newbill = 0;
 
 $scope.ArtistsController = function () {
     console.log("samfkldmklgmklfmh");
     $http.get('property/summary.json').success(function (data) {
         $scope.data = data;
         for (var x = 0; x < data.length; x++) {
-            totalAmount = data[x].balance;
+             $scope.totalAmount = data[x].balance;
         }
 
     });
@@ -33,8 +33,8 @@ $scope.ArtistsController = function () {
 
 $scope.makePayment = function () {
    var bill = $scope.bill ;
-    newbill = totalAmount - bill;
-    console.log(newbill);
+     $scope.newbill = totalAmount - bill;
+    console.log($scope.newbill);
 
 }
 }]);
