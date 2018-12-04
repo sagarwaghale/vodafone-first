@@ -6,26 +6,27 @@
 </head>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>-->
 
-
 <script src="js/lib/jquery/jquery-1.11.2.min.js"></script>
 <script src="js/lib/jquery/jquery.cookie.js"></script>
 <script src="js/lib/jquery/jquery-ui.min.js"></script>
+
 <script src="js/lib/bootstrap.min.js"></script>
 <script src="js/lib/angular/angular.min.js"></script>
-<script src="js/lib/angular/angular-animate.min.js"></script>
+
 <script src="js/lib/ui-bootstrap-tpls-0.10.0.min.js"></script>
 <script src="js/lib/angular/angular-route.min.js"></script>
-<script src="js/lib/angular/angular-mocks.js"></script>
-<script src="js/lib/angular/angular-translate.min.js"></script>
+
+
+<!--&lt;!&ndash;<script src="js/lib/angular/angular-translate.min.js"></script>
 <script src="js/lib/angular/angular-translate-loader-static-files.min.js"></script>
 <script src="js/lib/angular/modernizr-2.6.2.min.js"></script>
 <script src="js/lib/moment/moment.min.js"></script>
 <script src="js/lib/polyfill.js"></script>
 <script src="js/lib/mCustomScrollbar.concat.min.js"></script>
 <script src="js/lib/chart.js"></script>
-<script src="js/lib/angular-chart.js"></script>
+<script src="js/lib/angular-chart.js"></script>-->
 
-<script src="js/lib/angular/angular-cookies.min.js"></script>
+<!--<script src="js/lib/angular/angular-cookies.min.js"></script>
 
 
 <script src="js/lib/iframehelper.js"></script>
@@ -36,17 +37,17 @@
 <script src="js/lib/re-tree/re-tree.min.js"></script>
 <script src="js/lib/angular/ng-device-detector.min.js"></script>
 <script src="js/lib/lib.js"></script>
-<script src="js/lib/lottie/lottie.min.js"></script>
+<script src="js/lib/lottie/lottie.min.js"></script>-->
 <script src="src/js/app/app.js"></script>
 
 
 <body ng-app="myapp" ng-controller="myCtrl">
-<h1 class="main-title">Welcome To Vodafone</h1>
+<h1 class="main-title">Welcome</h1>
 <div class="main-title font-normal card">
-    <div class="margin-bottom20"><span>Your Bill</span><span class="left-padding100" ng-repeat="summary in artists">{{summary.balance}}</span></div>
-    <div class="margin-bottom20"><span>Amount Payable</span><span class="left-padding40">RS  <input class="input-box" type="number"> </span></div>
-    <button type="submit" class="button-submit">Pay Now</button>
-    <div class="margin-bottom20"><span>Balance Amount</span><span class="left-padding40">RS 50</span></div>
+    <div class="margin-bottom20" ng-init="ArtistsController()"><span>Your Bill</span><span class="left-padding100"  ng-repeat="summary in data">RS  {{summary.balance}}</span></div>
+    <div class="margin-bottom20"><span>Amount Payable</span><span class="left-padding40">RS  <input ng-model="bill" id="amount" class="input-box" type="number"> </span></div>
+    <button type="submit" class="button-submit" ng-click="makePayment()">Pay Now</button>
+    <div class="margin-bottom20"><span>Balance Amount</span><span class="left-padding40">RS  {{newbill}}</span></div>
 
 </div>
 
